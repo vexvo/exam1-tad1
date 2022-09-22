@@ -76,13 +76,12 @@ class Solution:
         date_premiered = input("What date did the series premiere: ")
         found = False
         for i in range(len(self.series)):
-            for j in range(len(self.series[i]["features_seasons"])):
-                if date_premiered == self.series[i]["features_seasons"][j]["premiere_date"]:
-                    print(f'Sucessfully removed {self.series[i]["serie"]}')
-                    self.series.remove(self.series[i])
-                    i += 1
-                    j = 0
-                    found = True
+            if date_premiered == self.series[i]["features_seasons"][j]["premiere_date"]:
+                print(f'Sucessfully removed {self.series[i]["serie"]}')
+                self.series.remove(self.series[i])
+                i += 1
+                j = 0
+                found = True
             
         if found == False:
             print("Was not found")
